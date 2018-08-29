@@ -1,3 +1,4 @@
-<p>
-  flash-alert works!
-</p>
+<alert [type]="tipo" class="alerta-geral" [dismissOnTimeout]="timeout" (onClosed)="onClosed()">
+  <span [innerHtml]="msg"></span>
+</alert>
+

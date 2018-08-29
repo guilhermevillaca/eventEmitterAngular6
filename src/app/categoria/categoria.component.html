@@ -1,3 +1,47 @@
-<p>
-  categoria works!
-</p>
+<div class="row">
+
+  <div class="col" *ngIf="loading">
+    <div class="loading"></div>
+    <p class="text-center">Carregando</p>
+
+  </div>
+
+  <div class="col" *ngIf="!loading">
+    <h5>Cadastro Categoria</h5>
+
+    <a routerLink="/categoria/add" class="btn btn-primary">Novo</a>   
+    
+    <br>
+    <br>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Categoria</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let categoria of categorias">
+          <td>{{categoria.ctgCodigo}}</td>
+          <td>{{categoria.ctgDescricao}}</td>
+          <td>
+            <div class="btn-group" role="group">
+              <button id="btnGroupDrop1" type="button" class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                Ações
+              </button>
+              <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                <a class="dropdown-item" routerLink="edit/{{categoria.ctgCodigo}}">Editar</a>
+                <a class="dropdown-item" (click)=remove(categoria.ctgCodigo)>Excluir</a>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+
+    </table>
+  </div>
+
+</div>

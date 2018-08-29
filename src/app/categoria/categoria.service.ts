@@ -1,7 +1,6 @@
 import { Categoria } from './../models/categoria.models';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Configuration } from '../app.constants';
 import * as $ from "jquery/dist/jquery.min.js";
 
 @Injectable({
